@@ -1,0 +1,7 @@
+- [x] Install .NET SDK (if not already)
+- [x] Run `dotnet new webapi -n MyFirstApi`
+- [x] Run it with `dotnet run` and hit the endpoint
+- [ ] Add a custom endpoint with route parameters
+- [ ] Understand the builder pattern and dependency injection
+- [ ] Explore LINQ in more depth
+- [ ] Set up HTTPS certificate trust 
