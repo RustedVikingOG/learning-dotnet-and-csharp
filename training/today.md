@@ -1,3 +1,0 @@
-- [ ] Install .NET SDK (if not already)
-- [ ] Run `dotnet new webapi -n MyFirstApi`
-- [ ] Run it with `dotnet run` and hit the endpoint 
