@@ -2,7 +2,7 @@
 
 **Learner:** Viking  
 **Started:** January 27, 2026  
-**Last Updated:** January 31, 2026
+**Last Updated:** February 1, 2026
 
 ---
 
@@ -29,9 +29,14 @@
 - [x] Understand basic type safety (`int`, `string?`, `DateOnly`)
 - [x] Basic LINQ (`Enumerable.Range`, `.Select()`, `.ToArray()`)
 - [x] Minimal API routing (`MapGet`)
-- [ ] Route parameters
-- [ ] POST/PUT/DELETE endpoints
-- [ ] Request body handling
+- [x] Route parameters
+- [x] POST/DELETE endpoints
+- [ ] PUT endpoints
+- [x] Request body handling
+- [x] Model binding (simple vs complex types)
+- [x] HTTP status codes (`Results.Ok()`, `Results.NotFound()`)
+- [ ] Input validation
+- [ ] Error handling
 
 ### Intermediate
 - [ ] Dependency injection
@@ -53,22 +58,24 @@
 | Lesson | Date | Report |
 |--------|------|--------|
 | Lesson 1: Web API Basics | 2026-01-31 | [View Report](../../reports/dotnet/20260131-report.md) |
+| Lesson 2: Custom Endpoints & Route Parameters | 2026-02-01 | [View Report](../../reports/dotnet/20260201-report.md) |
 
 ---
 
 ## Current Focus
 
-**Next Lesson:** [Custom Endpoints & Route Parameters](lesson-plan.md)
+**Next Lesson:** [Input Validation & Error Handling](lesson-plan.md)
 
 **Areas of Strength:**
 - Transferring knowledge from other frameworks (Node.js, Python)
 - Independent problem-solving and debugging
-- Asking clarifying questions
-- Finding documentation independently
+- Pattern recognition (applying solutions across exercises)
+- Self-correction through experimentation
 
 **Areas Needing Improvement:**
-- HTTPS certificate configuration
+- Input validation patterns
 - Deeper understanding of .NET-specific patterns (builder, DI)
+- HTTPS certificate configuration
 
 ---
 

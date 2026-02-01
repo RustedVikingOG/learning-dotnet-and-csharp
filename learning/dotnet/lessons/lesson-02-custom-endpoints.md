@@ -1,18 +1,18 @@
 # .NET Lesson 02: Custom Endpoints & Route Parameters
 
-**Date Started:**  
-**Estimated Time:** 2-3 hours  
-**Issue:** [#5](https://github.com/RustedVikingOG/learning-everything/issues/5)  
+**Date Completed:** February 1, 2026  
+**Estimated Time:** ~2 hours  
+**Report:** [View Report](../../../reports/dotnet/20260201-report.md)  
 **Milestone:** 1 - REST API Foundation
 
 ---
 
-## Objectives
+## Objectives ✅
 
-- [ ] Add a custom GET endpoint with a route parameter (`/hello/{name}`)
-- [ ] Add a POST endpoint that accepts JSON body data
-- [ ] Understand HTTP methods in ASP.NET Core (MapGet, MapPost, MapPut, MapDelete)
-- [ ] Return different response types (string, JSON, status codes)
+- [x] Add a custom GET endpoint with a route parameter (`/hello/{name}`)
+- [x] Add a POST endpoint that accepts JSON body data
+- [x] Understand HTTP methods in ASP.NET Core (MapGet, MapPost, MapDelete)
+- [x] Return different response types (string, JSON, status codes)
 
 ---
 
@@ -55,17 +55,48 @@ Add endpoints to manage a list of items in memory:
 
 ---
 
-## Before Starting
+## Key Concepts Covered
 
-- [ ] Review `Program.cs` from Lesson 1
-- [ ] Have `first-dotnet-webapi` project ready
-- [ ] Keep a terminal open for `dotnet run`
+1. **Route Parameters** - `{name}` syntax captures URL segments, binds to handler parameters
+2. **Model Binding** - Simple types → query string; Complex types (records) → request body
+3. **HTTP Methods** - `MapGet`, `MapPost`, `MapDelete` for different operations
+4. **Response Types** - `Results.Ok()`, `Results.NotFound()`, string, JSON
+5. **HTTP Status Codes** - 200 OK, 404 Not Found
 
 ---
 
-## Notes
+## What Was Built
 
-_Space for learnings, discoveries, and "aha" moments during the lesson_
+### Hello Endpoint
+```csharp
+app.MapGet("/hello/{name}", (string name) =>
+{
+    return $"Hello, {name}!";
+});
+```
+
+### Echo Endpoint
+```csharp
+app.MapPost("/echo", (MessageRequest messageRequest) =>
+{
+    return new MessageResponse($"You sent: {messageRequest.Message}");
+});
+```
+
+### Full CRUD for Items
+- `GET /items` - List all items
+- `GET /items/{id}` - Get single item with 404 handling
+- `POST /items` - Create item from JSON body
+- `DELETE /items/{id}` - Remove item with 404 handling
+
+---
+
+## Bugs Debugged
+
+1. Parameter name mismatch (`{name}` vs `string person`)
+2. Simple type looking in query string instead of body
+3. Missing `$` for string interpolation
+4. Nested object from wrong type assignment
 
 ---
 
@@ -80,6 +111,9 @@ _Space for learnings, discoveries, and "aha" moments during the lesson_
 
 ---
 
-## Summary
+## Areas Identified for Next Lesson
 
-_To be completed after lesson_
+- Input validation (what happens with bad/missing data?)
+- Error handling (400 Bad Request, custom error messages)
+- PUT endpoint for updates
+- `Results.Created()` with location headers
