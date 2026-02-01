@@ -1,10 +1,12 @@
-# Learning .NET and C#
+# Learning Everything
 
-A structured learning journey through .NET and C# development, guided by AI-assisted teaching methodology.
+A structured learning journey through various technologies, guided by AI-assisted teaching methodology.
 
 ## 🎯 Purpose
 
-This repository documents my progress learning .NET and C# from the ground up. Rather than following a traditional course, I'm using a **guided discovery approach** where an AI teacher helps me learn concepts through exploration, questions, and hands-on exercises.
+This repository documents my progress learning various technologies from the ground up. Rather than following traditional courses, I'm using a **guided discovery approach** where an AI teacher helps me learn concepts through exploration, questions, and hands-on exercises.
+
+Each topic has a **capstone project** that lessons build toward, creating purpose-driven learning.
 
 ## 📁 Repository Structure
 

@@ -214,7 +214,7 @@ gh auth refresh -s project
 
 ### Add Copilot as reviewer (MUST use API):
 ```bash
-gh api repos/RustedVikingOG/learning-dotnet-and-csharp/pulls/<pr-number>/requested_reviewers \
+gh api repos/RustedVikingOG/learning-everything/pulls/<pr-number>/requested_reviewers \
   --method POST \
   --field 'reviewers[]=Copilot'
 ```
@@ -244,8 +244,8 @@ gh api repos/RustedVikingOG/learning-dotnet-and-csharp/pulls/<pr-number>/request
 2. `<sha>` <message>
 
 ### Links
-- Issue: https://github.com/RustedVikingOG/learning-dotnet-and-csharp/issues/N
-- PR: https://github.com/RustedVikingOG/learning-dotnet-and-csharp/pull/N
+- Issue: https://github.com/RustedVikingOG/learning-everything/issues/N
+- PR: https://github.com/RustedVikingOG/learning-everything/pull/N
 ```
 
 ---
@@ -278,7 +278,7 @@ gh auth refresh -s project
 
 ### Need to verify Copilot was added
 ```bash
-gh api repos/RustedVikingOG/learning-dotnet-and-csharp/pulls/<pr-number>/requested_reviewers
+gh api repos/RustedVikingOG/learning-everything/pulls/<pr-number>/requested_reviewers
 ```
 
 ---
@@ -308,7 +308,7 @@ gh pr create --title "feat: add feature X" --body-file .tmp/pr-body.md --assigne
 
 # 6. Finalize (assuming PR is #15)
 gh pr edit 15 --add-project "Learning Project"
-gh api repos/RustedVikingOG/learning-dotnet-and-csharp/pulls/15/requested_reviewers --method POST --field 'reviewers[]=Copilot'
+gh api repos/RustedVikingOG/learning-everything/pulls/15/requested_reviewers --method POST --field 'reviewers[]=Copilot'
 
 # 7. Verify
 gh pr view 15

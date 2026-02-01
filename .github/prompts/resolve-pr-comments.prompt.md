@@ -182,7 +182,7 @@ gh pr view --json number,url,reviews
 gh pr view 14 --comments
 
 # 3. Or via API for structured data
-gh api repos/RustedVikingOG/learning-dotnet-and-csharp/pulls/14/comments --jq '.[] | {path, line, body, user: .user.login}'
+gh api repos/RustedVikingOG/learning-everything/pulls/14/comments --jq '.[] | {path, line, body, user: .user.login}'
 
 # 4. Make fixes to files
 # (edit files as needed)
@@ -197,7 +197,7 @@ git add -A && git commit -m "fix(pr): address review feedback
 git push
 
 # 7. Request re-review if needed
-gh api repos/RustedVikingOG/learning-dotnet-and-csharp/pulls/14/requested_reviewers \
+gh api repos/RustedVikingOG/learning-everything/pulls/14/requested_reviewers \
   --method POST --field 'reviewers[]=Copilot'
 ```
 
