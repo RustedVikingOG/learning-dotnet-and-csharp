@@ -6,9 +6,20 @@ name: generate-learning-report
 
 You are generating a learning progress report based on a completed teaching session. Use the template at `.github/templates/learning-report.md` as the structure.
 
+## Before Writing: Gather Context
+
+**Required reading before generating the report:**
+
+1. **Previous reports** - Check `reports/[topic]/` for earlier reports. Note patterns, recurring struggles, and growth over time.
+2. **Capstone goals** - Read `learning/[topic]/goals.md` to understand which milestone we're working toward.
+3. **Current progress** - Review `learning/[topic]/progress.md` for cumulative objectives.
+4. **Lesson history** - Scan `learning/[topic]/lessons/README.md` for the learning trajectory.
+
+This context is essential for writing a report that builds on history rather than treating each session in isolation.
+
 ## Instructions
 
-Review the conversation history from this teaching session and create an accurate, honest assessment of the student's learning progress.
+Review the conversation history from this teaching session AND the historical context above. Create an accurate, honest, forward-looking assessment.
 
 ### Required Information to Extract
 
@@ -39,9 +50,41 @@ Review the conversation history from this teaching session and create an accurat
    - What existing skills did the student leverage?
    - How did they relate new concepts to familiar ones?
 
-7. **Areas for Improvement**
+7. **Student Attitude & Engagement**
+   - How did the student approach challenges? (frustrated, curious, persistent?)
+   - Did they show enthusiasm or resistance to certain topics?
+   - Energy level throughout the session
+   - Any signs of burnout, boredom, or disengagement?
+
+8. **Historical Patterns** (from previous reports)
+   - Is this consistent with past performance?
+   - Are recurring struggles being addressed?
+   - Is growth evident compared to earlier sessions?
+
+9. **Capstone Alignment**
+   - How does this session advance the capstone project?
+   - Which milestone skills were practiced?
+   - Is the student on track for the current milestone?
+
+10. **Areas for Improvement**
    - What topics need more exploration?
    - What concepts seemed unclear or shaky?
+
+### Critical: The "Shape of the Future" Section
+
+The most important part of the report is the **Path Forward** section. This must:
+
+1. **Synthesize everything** - Combine session performance, historical patterns, capstone goals, and student attitude
+2. **Be specific and actionable** - Not vague suggestions, but concrete next steps
+3. **Balance challenge with encouragement** - Push growth while maintaining positive momentum
+4. **Align with capstone** - Every recommendation should move toward milestone completion
+5. **Address the whole student** - If attitude issues exist, suggest how to rekindle engagement
+
+**Example of weak future shaping:**
+> "Continue learning about APIs."
+
+**Example of strong future shaping:**
+> "Ready for Lesson 03 focusing on input validation—this completes Milestone 1 skill 'Error handling'. Consider starting with a smaller exercise first given last session's frustration with debugging. The POST /items endpoint from Exercise 3 would benefit from validation, making this a natural continuation that shows immediate practical value."
 
 ### Critical: Honest Assessment
 

@@ -2,7 +2,17 @@
 
 **Student:** [Name]  
 **Effective Time Spent:** [X hours]  
-**Topic:** [Brief description of learning focus]
+**Topic:** [Brief description of learning focus]  
+**Lesson:** [NN] - [Title]  
+**Milestone:** [N] - [Milestone Name] *(X% complete after this session)*
+
+---
+
+## Session Context
+
+**Previous Session:** [Link to last report or "First session"]  
+**Capstone Goal:** [Brief reminder of what we're building toward]  
+**This Session's Role:** [How this lesson advances the capstone]
 
 ---
 
@@ -58,6 +68,37 @@ The student effectively leveraged experience with:
 
 ---
 
+## Student Attitude & Engagement
+
+### Emotional State
+- **Energy Level:** [High/Medium/Low] - [Observations]
+- **Curiosity:** [What sparked interest? What fell flat?]
+- **Persistence:** [How did they handle setbacks?]
+- **Confidence:** [Over/under-confident? Appropriately calibrated?]
+
+### Session Dynamics
+[Narrative description: Did they seem excited, tired, frustrated? Any moments of breakthrough joy or visible struggle? Did they want to keep going or seemed ready to stop?]
+
+### Compared to Previous Sessions
+[If applicable: Is this consistent with past engagement? Any concerning trends?]
+
+---
+
+## Historical Patterns
+
+### Growth Since Last Session
+- [Specific improvement observed]
+- [Skill that's now stronger]
+
+### Recurring Themes
+- [Pattern that keeps appearing - positive or negative]
+- [Long-standing strength or weakness]
+
+### Trajectory
+[Is the student accelerating, plateauing, or regressing? Evidence?]
+
+---
+
 ## Areas for Continued Learning
 
 - [Topic to explore next]
@@ -85,4 +126,25 @@ The student effectively leveraged experience with:
 
 [Overall assessment of the session - what went well, student's learning approach, and readiness for next steps]
 
-**Recommended Next Steps:** [Specific actionable items for continued learning]
+---
+
+## Path Forward
+
+### Immediate Next Steps
+1. **Next Lesson:** [Lesson NN - Title] focusing on [specific skills]
+2. **Why This:** [How it builds on this session and advances the capstone]
+3. **Adjusted Approach:** [Any changes to teaching style based on this session's observations]
+
+### Milestone Progress
+- **Current Milestone:** [N] - [Name]
+- **Skills Completed:** [X/Y] 
+- **Estimated Sessions to Milestone:** [N]
+- **On Track?** [Yes/No - if no, what's needed]
+
+### Maintaining Positive Momentum
+[Specific suggestions to keep the student engaged and motivated. Address any attitude concerns. Celebrate wins. Set up the next session for success.]
+
+### Long-term Trajectory
+[How does this session fit into the bigger picture? Is the student heading toward their learning goals? Any course corrections needed?]
+
+**Bottom Line:** [One sentence capturing the most important thing about where this student is and where they're going]
