@@ -45,6 +45,10 @@
 - [ ] No sensitive information or credentials included
 - [ ] Build artifacts are not committed (check `.gitignore`)
 
+## Issues this PR Addresses
+
+<!-- Link to any relevant issues or learning objectives -->
+
 ## Notes for Reviewer
 
 <!-- Any additional context, questions, or areas needing feedback -->
