@@ -1,7 +1,14 @@
 - [x] Install .NET SDK (if not already)
 - [x] Run `dotnet new webapi -n MyFirstApi`
 - [x] Run it with `dotnet run` and hit the endpoint
-- [ ] Add a custom endpoint with route parameters
+- [x] Add a custom endpoint with route parameters
+- [x] Understand model binding (simple vs complex types)
+- [x] Implement POST endpoints with JSON body
+- [x] Use Results.Ok() and Results.NotFound() for status codes
+- [x] Build in-memory CRUD operations
+- [ ] Add input validation to endpoints
+- [ ] Implement proper error handling (400 Bad Request)
+- [ ] Add PUT endpoint for updates
 - [ ] Understand the builder pattern and dependency injection
 - [ ] Explore LINQ in more depth
 - [ ] Set up HTTPS certificate trust 

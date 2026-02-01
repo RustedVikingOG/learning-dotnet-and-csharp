@@ -29,11 +29,11 @@ A real-time chat application that demonstrates full-stack .NET development. By c
 |-------|--------|--------|
 | Project scaffolding | ✅ | 01 |
 | Minimal API routing | ✅ | 01 |
-| Route parameters | ⏳ | 02 |
-| HTTP methods (GET/POST/PUT/DELETE) | ⏳ | 02 |
-| Request/response JSON | ⏳ | 02 |
-| Input validation | ⬜ | 03 |
-| Error handling | ⬜ | 03 |
+| Route parameters | ✅ | 02 |
+| HTTP methods (GET/POST/PUT/DELETE) | ✅ | 02 |
+| Request/response JSON | ✅ | 02 |
+| Input validation | ⏳ | 03 |
+| Error handling | ⏳ | 03 |
 
 **Capstone Feature:** Basic CRUD API for chat rooms and messages (in-memory).
 

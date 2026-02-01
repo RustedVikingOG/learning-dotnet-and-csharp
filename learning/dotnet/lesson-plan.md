@@ -1,48 +1,44 @@
-# .NET Lesson 02: Custom Endpoints & Route Parameters
+# .NET Lesson 03: Input Validation & Error Handling
 
 **Estimated Time:** 2-3 hours  
-**Prerequisites:** Completed Lesson 1 (Web API basics, `dotnet run`, endpoint testing)  
-**Milestone:** 1 - REST API Foundation *(see [goals.md](goals.md))*
+**Prerequisites:** Completed Lesson 2 (route parameters, POST endpoints, CRUD)  
+**Milestone:** 1 - REST API Foundation *(final lesson for M1)*
 
 ---
 
 ## Objectives
 
-- [ ] Add a custom GET endpoint with a route parameter (`/hello/{name}`)
-- [ ] Add a POST endpoint that accepts JSON body data
-- [ ] Understand HTTP methods in ASP.NET Core (MapGet, MapPost, MapPut, MapDelete)
-- [ ] Return different response types (string, JSON, status codes)
+- [ ] Add validation to POST endpoints (required fields, data constraints)
+- [ ] Return appropriate error responses (400 Bad Request)
+- [ ] Implement a PUT endpoint to complete CRUD operations
+- [ ] Understand `Results.Created()` with location headers
 
 ---
 
 ## Key Concepts
 
-1. **Route Parameters** - Capturing values from the URL path
-2. **Request Body** - Accepting JSON data in POST/PUT requests
-3. **HTTP Methods** - When to use GET vs POST vs PUT vs DELETE
-4. **Response Types** - `Results.Ok()`, `Results.NotFound()`, `Results.Created()`
+1. **Input Validation** - Checking data before processing
+2. **Data Annotations** - `[Required]`, `[MinLength]`, `[Range]` attributes
+3. **Error Responses** - 400 Bad Request vs 404 Not Found
+4. **PUT vs POST** - When to use each for create/update
 
 ---
 
 ## Exercises
 
-### Exercise 1: Hello Endpoint
-Create `/hello/{name}` that returns `"Hello, {name}!"`.
+### Exercise 1: Validate Item Creation
+Add validation to `POST /items` - name must not be empty.
 
-### Exercise 2: Echo Endpoint  
-Create `POST /echo` that accepts JSON and returns it back.
+### Exercise 2: Add PUT Endpoint
+Create `PUT /items/{id}` to update an existing item's name.
 
-### Exercise 3: Simple CRUD
-Add endpoints to manage a list of items in memory:
-- `GET /items` - list all
-- `GET /items/{id}` - get one
-- `POST /items` - add new
-- `DELETE /items/{id}` - remove
+### Exercise 3: Meaningful Error Messages
+Return helpful error messages when validation fails.
 
 ---
 
 ## Before You Start
-
-- Review `Program.cs` from Lesson 1
-- Have `first-dotnet-webapi` project ready
-- Keep a terminal open for `dotnet run`
+    
+- Review Lesson 2 concepts (route params, model binding)
+- Have your `first-dotnet-webapi` project ready
+- Test your existing endpoints still work
