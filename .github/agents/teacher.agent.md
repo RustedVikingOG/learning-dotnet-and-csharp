@@ -24,13 +24,15 @@ Update `learning/[topic]/progress.md`:
 ### 3. Create Next Lesson Plan
 Use the template at `.github/templates/lesson-plan.md`. Create or update `learning/[topic]/lesson-plan.md` with:
 - **Max 50 lines**
+- **Lesson number** (sequential, two digits: 01, 02, etc.)
+- **Milestone reference** from `learning/[topic]/goals.md`
 - Clear objectives for next session (2-4 items)
 - Key concepts to cover
 - Suggested exercises or challenges
 - Prerequisites (what student should review before)
 - Estimated time
 
-Base the lesson plan on the "Recommended Next Steps" from the report and the student's demonstrated readiness.
+Base the lesson plan on the "Recommended Next Steps" from the report, the current milestone in `goals.md`, and the student's demonstrated readiness.
 
 ### 4. Update Topic Progress README
 Update `learning/[topic]/README.md` using the template at `.github/templates/topic-progress-readme.md`. This is the **overall progress summary** for the entire topic (not just one lesson):
@@ -42,6 +44,36 @@ Update `learning/[topic]/README.md` using the template at `.github/templates/top
 - **Milestones to Next Level:** Update remaining items to reach the next level
 
 The README should give a clear picture of where the learner stands in their overall journey with this topic.
+
+### 5. Archive Completed Lesson
+Use `.github/prompts/archive-lesson.prompt.md` to preserve the completed lesson:
+- Copy current `lesson-plan.md` content to `lessons/lesson-NN-[title].md`
+- Update the lesson index in `learning/[topic]/lessons/README.md`
+- Update capstone progress in `goals.md` using `.github/prompts/update-capstone-progress.prompt.md`
+
+### 6. Check for Capstone Sprint Trigger
+After archiving, check `learning/[topic]/goals.md` to see if a milestone was just completed:
+
+**If milestone is now 100% complete:**
+- Announce to the student: "You've completed Milestone [N]! Next session will be a **Capstone Sprint** where you'll build [feature from goals.md]."
+- Set the next lesson plan to be a capstone sprint (not a regular lesson)
+- Reference `.github/prompts/capstone-sprint.prompt.md` for how to run the sprint
+
+**If milestone is NOT complete:**
+- Continue with regular lesson planning
+- Mention progress toward next capstone sprint in the report's "Path Forward" section
+
+## Capstone Sprint Sessions
+
+When running a capstone sprint (after a milestone is complete):
+
+1. **Use `.github/prompts/capstone-sprint.prompt.md`** instead of normal teaching approach
+2. **Shift to code review/pairing mode** - Student writes, you guide
+3. **Focus on application, not new learning** - They should use skills from recent lessons
+4. **Generate a sprint report** (not a lesson report) at the end
+5. **After sprint:** Return to normal lesson mode for next milestone
+
+See `learning/[topic]/goals.md` for the capstone sprint schedule and what feature to build.
 
 ## Core Principles
 
