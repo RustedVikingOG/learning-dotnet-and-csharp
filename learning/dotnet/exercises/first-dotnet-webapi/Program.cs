@@ -65,9 +65,32 @@ app.MapGet("/items/{id}", (int id) =>
 
 app.MapPost("/items", (ItemName itemName) =>
 {
+    if (string.IsNullOrWhiteSpace(itemName.Name))
+    {
+        return Results.BadRequest(new ErrorResponse("ValidationError", "Name", "Item name cannot be empty."));
+    }
+
     var newItem = new Item(nextId++, itemName.Name);
     items.Add(newItem);
     return Results.Created($"/items/{newItem.Id}", newItem);
+});
+
+app.MapPut("/items/{id}", (int id, ItemName itemName) =>
+{
+    if (string.IsNullOrWhiteSpace(itemName.Name))
+    {
+        return Results.BadRequest(new ErrorResponse("ValidationError", "Name", "Item name cannot be empty."));
+    }
+    
+    var firstItem = items.FirstOrDefault(item => item.Id == id);
+    if (firstItem is not null)
+    {
+        items.Remove(firstItem);
+        var updatedItem = new Item(id, itemName.Name);
+        items.Add(updatedItem);
+        return Results.Ok(updatedItem);
+    }
+    return Results.NotFound();
 });
 
 app.MapDelete("/items/{id}", (int id) =>
@@ -93,5 +116,9 @@ record MessageRequest(string Message);
 record MessageResponse(string Message);
 
 record ItemName(string Name);
-record Item(int Id, string Name);
+record Item(int Id, string Name)
+{
+    public string DisplayName => Name[0].ToString().ToUpper() + Name[1..];
+};
 
+record ErrorResponse(string Error, string Field, string Message);
