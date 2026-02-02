@@ -2,7 +2,7 @@
 
 **Learner:** Viking  
 **Started:** January 27, 2026  
-**Last Updated:** February 1, 2026
+**Last Updated:** February 2, 2026
 
 ---
 
@@ -15,7 +15,7 @@
 | 🌳 Advanced | Not Started |
 | 🏆 Expert | Not Started |
 
-**Current Status:** 🌱 Beginner - Completing foundational concepts
+**Current Status:** 🌱 Beginner - Milestone 1 Complete! Ready for Capstone Sprint
 
 ---
 
@@ -31,12 +31,12 @@
 - [x] Minimal API routing (`MapGet`)
 - [x] Route parameters
 - [x] POST/DELETE endpoints
-- [ ] PUT endpoints
+- [x] PUT endpoints
 - [x] Request body handling
 - [x] Model binding (simple vs complex types)
-- [x] HTTP status codes (`Results.Ok()`, `Results.NotFound()`)
-- [ ] Input validation
-- [ ] Error handling
+- [x] HTTP status codes (`Results.Ok()`, `Results.NotFound()`, `Results.BadRequest()`)
+- [x] Input validation
+- [x] Structured error responses
 
 ### Intermediate
 - [ ] Dependency injection
@@ -59,23 +59,25 @@
 |--------|------|--------|
 | Lesson 1: Web API Basics | 2026-01-31 | [View Report](../../reports/dotnet/20260131-report.md) |
 | Lesson 2: Custom Endpoints & Route Parameters | 2026-02-01 | [View Report](../../reports/dotnet/20260201-report.md) |
+| Lesson 3: Input Validation & Error Handling | 2026-02-02 | [View Report](../../reports/dotnet/20260202-report.md) |
 
 ---
 
 ## Current Focus
 
-**Next Lesson:** [Input Validation & Error Handling](lesson-plan.md)
+**Next Session:** 🚀 [Capstone Sprint - Chat Rooms & Messages API](lesson-plan.md)
 
 **Areas of Strength:**
 - Transferring knowledge from other frameworks (Node.js, Python)
 - Independent problem-solving and debugging
 - Pattern recognition (applying solutions across exercises)
-- Self-correction through experimentation
+- Test-first mentality - verifies behavior before implementing
+- Asks "why" not just "how"
 
 **Areas Needing Improvement:**
-- Input validation patterns
 - Deeper understanding of .NET-specific patterns (builder, DI)
-- HTTPS certificate configuration
+- Data Annotations for declarative validation
+- Database persistence (coming in Milestone 2)
 
 ---
 

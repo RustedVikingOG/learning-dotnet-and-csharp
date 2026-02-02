@@ -1,44 +1,84 @@
-# .NET Lesson 03: Input Validation & Error Handling
+# 🚀 .NET Capstone Sprint: Chat Rooms & Messages API
 
+**Type:** Capstone Sprint (not a lesson)  
 **Estimated Time:** 2-3 hours  
-**Prerequisites:** Completed Lesson 2 (route parameters, POST endpoints, CRUD)  
-**Milestone:** 1 - REST API Foundation *(final lesson for M1)*
+**Prerequisites:** Completed Milestone 1 (Lessons 01-03)  
+**Milestone:** 1 - REST API Foundation
 
 ---
 
-## Objectives
+## 🎯 Sprint Goal
 
-- [ ] Add validation to POST endpoints (required fields, data constraints)
-- [ ] Return appropriate error responses (400 Bad Request)
-- [ ] Implement a PUT endpoint to complete CRUD operations
-- [ ] Understand `Results.Created()` with location headers
+Build an in-memory CRUD API for the WebChat application with:
+- **Chat Rooms** - Create, list, get, delete rooms
+- **Messages** - Create messages in rooms, list messages by room
 
----
-
-## Key Concepts
-
-1. **Input Validation** - Checking data before processing
-2. **Data Annotations** - `[Required]`, `[MinLength]`, `[Range]` attributes
-3. **Error Responses** - 400 Bad Request vs 404 Not Found
-4. **PUT vs POST** - When to use each for create/update
+This is YOUR build session. You write the code, I guide when needed.
 
 ---
 
-## Exercises
+## What You're Applying
 
-### Exercise 1: Validate Item Creation
-Add validation to `POST /items` - name must not be empty.
+Skills from Lessons 01-03:
+- [x] Minimal API routing (`MapGet`, `MapPost`, `MapPut`, `MapDelete`)
+- [x] Route parameters (`/rooms/{id}`, `/rooms/{roomId}/messages`)
+- [x] Request body handling (JSON → records)
+- [x] Input validation (`string.IsNullOrWhiteSpace`)
+- [x] Structured error responses (`ErrorResponse` record)
+- [x] HTTP status codes (200, 201, 400, 404)
 
-### Exercise 2: Add PUT Endpoint
-Create `PUT /items/{id}` to update an existing item's name.
+---
 
-### Exercise 3: Meaningful Error Messages
-Return helpful error messages when validation fails.
+## Suggested Structure
+
+### Chat Room Endpoints
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/rooms` | List all rooms |
+| GET | `/rooms/{id}` | Get single room |
+| POST | `/rooms` | Create room |
+| DELETE | `/rooms/{id}` | Delete room |
+
+### Message Endpoints
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/rooms/{roomId}/messages` | List messages in room |
+| POST | `/rooms/{roomId}/messages` | Create message in room |
+
+---
+
+## Data Models to Consider
+
+Think about what properties each entity needs:
+- **Room:** What identifies a room? What info does it have?
+- **Message:** What identifies a message? Who sent it? When? Which room?
 
 ---
 
 ## Before You Start
-    
-- Review Lesson 2 concepts (route params, model binding)
-- Have your `first-dotnet-webapi` project ready
-- Test your existing endpoints still work
+
+- Have your `first-dotnet-webapi` project ready (or create a new `webchat-api` project)
+- Review your existing `/items` endpoints for reference
+- Plan your approach: rooms first, then messages?
+
+---
+
+## Success Criteria
+
+- [ ] Can create and list chat rooms
+- [ ] Can create messages in a specific room
+- [ ] Validation prevents empty room names and empty messages
+- [ ] 404 returned when room doesn't exist
+- [ ] Clean, consistent error responses
+
+---
+
+## Remember
+
+This is a sprint, not a lesson. I'm here as your pair partner:
+- You drive, I navigate
+- I'll ask questions, not give answers
+- Struggle is part of the process
+- When stuck, tell me what you've tried
+
+Let's build! 🏗️

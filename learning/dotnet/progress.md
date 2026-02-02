@@ -6,9 +6,10 @@
 - [x] Implement POST endpoints with JSON body
 - [x] Use Results.Ok() and Results.NotFound() for status codes
 - [x] Build in-memory CRUD operations
-- [ ] Add input validation to endpoints
-- [ ] Implement proper error handling (400 Bad Request)
-- [ ] Add PUT endpoint for updates
+- [x] Add input validation to endpoints
+- [x] Implement proper error handling (400 Bad Request)
+- [x] Add PUT endpoint for updates
+- [ ] Complete Milestone 1 Capstone Sprint
 - [ ] Understand the builder pattern and dependency injection
 - [ ] Explore LINQ in more depth
 - [ ] Set up HTTPS certificate trust 
