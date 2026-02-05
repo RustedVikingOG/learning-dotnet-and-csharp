@@ -9,7 +9,7 @@
 - [x] Add input validation to endpoints
 - [x] Implement proper error handling (400 Bad Request)
 - [x] Add PUT endpoint for updates
-- [ ] Complete Milestone 1 Capstone Sprint
+- [x] Complete Milestone 1 Capstone Sprint
 - [ ] Understand the builder pattern and dependency injection
 - [ ] Explore LINQ in more depth
 - [ ] Set up HTTPS certificate trust 

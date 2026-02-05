@@ -1,84 +1,94 @@
-# 🚀 .NET Capstone Sprint: Chat Rooms & Messages API
+# 🗄️ Lesson 04: Entity Framework Core Basics
 
-**Type:** Capstone Sprint (not a lesson)  
-**Estimated Time:** 2-3 hours  
-**Prerequisites:** Completed Milestone 1 (Lessons 01-03)  
-**Milestone:** 1 - REST API Foundation
-
----
-
-## 🎯 Sprint Goal
-
-Build an in-memory CRUD API for the WebChat application with:
-- **Chat Rooms** - Create, list, get, delete rooms
-- **Messages** - Create messages in rooms, list messages by room
-
-This is YOUR build session. You write the code, I guide when needed.
+**Type:** Lesson (Theory + Practice)
+**Estimated Time:** 1.5 hours
+**Milestone:** 2 - Data Persistence
 
 ---
 
-## What You're Applying
+## 🎯 Objectives
 
-Skills from Lessons 01-03:
-- [x] Minimal API routing (`MapGet`, `MapPost`, `MapPut`, `MapDelete`)
-- [x] Route parameters (`/rooms/{id}`, `/rooms/{roomId}/messages`)
-- [x] Request body handling (JSON → records)
-- [x] Input validation (`string.IsNullOrWhiteSpace`)
-- [x] Structured error responses (`ErrorResponse` record)
-- [x] HTTP status codes (200, 201, 400, 404)
+1.  **Understand ORMs:** What is Entity Framework Core and why do we use it?
+2.  **Install EF Core:** Add packages to the project.
+3.  **Create a DbContext:** The bridge between code and data.
+4.  **Entities vs DTOs:** Refactoring our `record` models into proper Entities.
+5.  **In-Memory Database:** Using EF Core's in-memory provider (for testing/learning before SQL).
 
 ---
 
-## Suggested Structure
+## 📚 Theory: The Persistence Layer
 
-### Chat Room Endpoints
-| Method | Route | Description |
-|--------|-------|-------------|
-| GET | `/rooms` | List all rooms |
-| GET | `/rooms/{id}` | Get single room |
-| POST | `/rooms` | Create room |
-| DELETE | `/rooms/{id}` | Delete room |
+Currently, `var rooms = new List<Room>();` dies when the app stops.
+To save data, we need a database. But writing raw SQL (`SELECT * FROM Rooms`) is tedious and error-prone.
 
-### Message Endpoints
-| Method | Route | Description |
-|--------|-------|-------------|
-| GET | `/rooms/{roomId}/messages` | List messages in room |
-| POST | `/rooms/{roomId}/messages` | Create message in room |
+**Enter EF Core (ORM):**
+- **ORM:** Object-Relational Mapper.
+- Maps C# Objects (`Room`) <--> Database Rows (Table `Rooms`).
+- We write C#, EF writes the SQL.
 
----
-
-## Data Models to Consider
-
-Think about what properties each entity needs:
-- **Room:** What identifies a room? What info does it have?
-- **Message:** What identifies a message? Who sent it? When? Which room?
+### Key Components
+1.  **Entity:** A class representing a table (e.g., `class Room { Id, Name }`).
+2.  **DbContext:** Represents a session with the database. Manages saving/retrieving entities.
+3.  **DbSet<T>:** Represents a table inside the DbContext.
 
 ---
 
-## Before You Start
+## 🏗️ Exercises
 
-- Have your `first-dotnet-webapi` project ready (or create a new `webchat-api` project)
-- Review your existing `/items` endpoints for reference
-- Plan your approach: rooms first, then messages?
+### 1. Project Setup (Refactor WebChat)
+We will continue working on your **WebChatApi**.
+
+**Step A: Install Packages**
+```bash
+dotnet add package Microsoft.EntityFrameworkCore.InMemory
+```
+
+### 2. Define Entities
+Refactor `Room` and `Message` from `record` (immutable) to `class` (mutable, easier for EF).
+
+```csharp
+public class Room
+{
+    public string Id { get; set; } = Guid.NewGuid().ToString();
+    public string Name { get; set; } = string.Empty;
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+}
+```
+
+### 3. The AppDbContext
+Create `Data/AppDbContext.cs`.
+
+```csharp
+class AppDbContext : DbContext 
+{
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) {}
+    public DbSet<Room> Rooms => Set<Room>();
+    public DbSet<Message> Messages => Set<Message>();
+}
+```
+
+### 4. Dependency Injection
+Wire it up in `Program.cs`.
+
+```csharp
+builder.Services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("WebChat"));
+```
+
+### 5. Refactor Endpoints
+Replace `List<Room>` with `db.Rooms`.
 
 ---
 
-## Success Criteria
+## 🧪 Success Criteria
 
-- [ ] Can create and list chat rooms
-- [ ] Can create messages in a specific room
-- [ ] Validation prevents empty room names and empty messages
-- [ ] 404 returned when room doesn't exist
-- [ ] Clean, consistent error responses
+- [ ] `Microsoft.EntityFrameworkCore.InMemory` package installed
+- [ ] `AppDbContext` created and registered in DI
+- [ ] Endpoints refactored to use `db.Rooms.ToList()` and `db.SaveChanges()`
+- [ ] App behaves exactly as before, but using EF Core syntax
 
 ---
 
-## Remember
+## 🧠 Check for Understanding
 
-This is a sprint, not a lesson. I'm here as your pair partner:
-- You drive, I navigate
-- I'll ask questions, not give answers
-- Struggle is part of the process
-- When stuck, tell me what you've tried
-
-Let's build! 🏗️
+- Why do we need a `DbContext`?
+- What is difference between `List.Add()` and `db.Rooms.Add()`? (Hint: `SaveChanges`)
